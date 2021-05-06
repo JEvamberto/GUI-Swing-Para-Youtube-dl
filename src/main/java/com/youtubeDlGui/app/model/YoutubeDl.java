@@ -20,6 +20,7 @@ public class YoutubeDl {
     private String url;
     private String qualidade;
     private Process youtubeDl;
+    private String placeDirectory;
 
     private ArrayList <Observer> observers  = new ArrayList();
     
@@ -37,25 +38,23 @@ public class YoutubeDl {
         }
     }
     
+    public String yotubeDlQualidade (String url){
+          try {
+            this.youtubeDl=Runtime.getRuntime().exec("youtube-dl "+qualidade+url);
+            BufferedReader in = new BufferedReader(new InputStreamReader(this.youtubeDl.getInputStream()));
+            String line;
+            while((line=in.readLine()) != null ){
+                System.out.println(line);
+            
+            }
+            
+        } catch (IOException ex) {
+            Logger.getLogger(YoutubeDl.class.getName()).log(Level.SEVERE, null, ex);
+        }
+          return null;
+    }
     public void youtubeDlBaixar (String qualidade,String url ) {
         try {
-            /*processo = Runtime.getRuntime().exec("glucose "+arquivos[es].getName()+".cnf");
-            BufferedReader in = new BufferedReader(new InputStreamReader(processo.getInputStream()));
-            
-            String line;
-            
-            while ((line = in.readLine()) != null) {
-            if (line.equals("s SATISFIABLE")) {
-            System.out.println("É satisfazível");
-            System.out.println(line);
-            isSatisfativel=true;
-            } else {
-            
-            // System.out.println(line);
-            isSatisfativel=false;
-            }
-            }
-            processo.waitFor();*/
             this.youtubeDl=Runtime.getRuntime().exec("youtube-dl "+qualidade+url);
             BufferedReader in = new BufferedReader(new InputStreamReader(this.youtubeDl.getInputStream()));
             String line;
