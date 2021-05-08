@@ -59,7 +59,7 @@ public class ControllerViewYoutubeDl implements Observer {
             
        //  this.getModel().obterTitulo();
            this.getModel().obterThumb();
-           //this.getModel().iniciarBaixar();
+          //this.getModel().iniciarBaixar();//Aqui chama apenas o método ObterThumb
              
         }
         

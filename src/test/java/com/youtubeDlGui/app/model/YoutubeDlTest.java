@@ -77,6 +77,7 @@ public class YoutubeDlTest {
 
     /**
      * Test of youtubeDlBaixar method, of class YoutubeDl.
+     * https://www.youtube.com/watch?v=2wo5pDk13W8
      */
     @Test
     public void testYoutubeDlBaixar() {
@@ -84,7 +85,7 @@ public class YoutubeDlTest {
         String qualidade = "";
         String url = "https://www.youtube.com/watch?v=6bqM9kT9f0E";
         YoutubeDl instance = new YoutubeDl();
-        instance.youtubeDlBaixar(qualidade, url);
+        instance.baixar();
         // TODO review the generated test code and remove the default call to fail.
        // fail("The test case is a prototype.");
     }
