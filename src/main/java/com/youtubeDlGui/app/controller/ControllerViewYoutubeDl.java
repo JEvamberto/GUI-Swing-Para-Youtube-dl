@@ -57,9 +57,9 @@ public class ControllerViewYoutubeDl implements Observer {
                  this.getModel().setQualidade(" -f 140");
             }
             
-       //  this.getModel().obterTitulo();
-           this.getModel().obterThumb();
-          //this.getModel().iniciarBaixar();//Aqui chama apenas o método ObterThumb
+         this.getModel().getUrlThumb();
+         this.getModel().getTitulo();
+          this.getModel().iniciarBaixar();
              
         }
         

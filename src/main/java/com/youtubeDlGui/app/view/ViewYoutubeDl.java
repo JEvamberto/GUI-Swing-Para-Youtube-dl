@@ -9,6 +9,7 @@ import com.youtubeDlGui.app.controller.ControllerViewYoutubeDl;
 import com.youtubeDlGui.app.model.Observer;
 import com.youtubeDlGui.app.model.YoutubeDl;
 import java.awt.Image;
+import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
@@ -36,12 +37,13 @@ public class ViewYoutubeDl extends javax.swing.JFrame implements Observer {
     private ControllerViewYoutubeDl controller;
     private boolean control;
     private String urlAnterior;
+
     public ViewYoutubeDl(YoutubeDl model) {
         initComponents();
-        this.model=model;
-        this.controller= new ControllerViewYoutubeDl(this.model,this);
+        this.model = model;
+        this.controller = new ControllerViewYoutubeDl(this.model, this);
         this.model.attach(this);
-        control=true;
+        control = true;
     }
 
     /**
@@ -122,7 +124,7 @@ public class ViewYoutubeDl extends javax.swing.JFrame implements Observer {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(25, 25, 25)
+                .addGap(13, 13, 13)
                 .addComponent(jText_url, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jRadioQualidade)
@@ -145,24 +147,28 @@ public class ViewYoutubeDl extends javax.swing.JFrame implements Observer {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap(9, Short.MAX_VALUE)
-                .addComponent(img, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(progresso, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(140, 140, 140)
-                .addComponent(titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(img, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 133, Short.MAX_VALUE)
+                        .addComponent(progresso, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addComponent(titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(progresso, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(img, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, Short.MAX_VALUE)
+                .addComponent(progresso, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(0, 34, Short.MAX_VALUE)
+                .addComponent(img, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         jButton1.setText("Download");
@@ -177,7 +183,7 @@ public class ViewYoutubeDl extends javax.swing.JFrame implements Observer {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(454, Short.MAX_VALUE)
+                .addContainerGap(466, Short.MAX_VALUE)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(19, 19, 19))
         );
@@ -196,7 +202,7 @@ public class ViewYoutubeDl extends javax.swing.JFrame implements Observer {
             .addGroup(layout.createSequentialGroup()
                 .addGap(97, 97, 97)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 100, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -236,7 +242,6 @@ public class ViewYoutubeDl extends javax.swing.JFrame implements Observer {
     /**
      * @param args the command line arguments
      */
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
@@ -257,35 +262,37 @@ public class ViewYoutubeDl extends javax.swing.JFrame implements Observer {
 
     @Override
     public void update() {
-        /*if (control) {
-             //this.getTitulo().setText(this.getModel().getTitulo());
-               System.out.println(this.getModel().getUrlThumb()+"View url");
-             this.setLabelIcon(this.getModel().getUrlThumb());
-          
-             control=false;
-             this.setUrlAnterior(this.getModel().getUrl());
-        }*/
-        //this.getTitulo().setText(this.getModel().getTitulo());
-             System.out.println(this.getModel().getUrlThumb()+"View url");
-             this.setLabelIcon(this.getModel().getUrlThumb());
+        if (control) {
+            //this.getTitulo().setText(this.getModel().getTitulo());
 
-       //this.getProgresso().setText(this.getModel().getOutput());
-       
-       
-       /*if (!this.getUrlAnterior().equals(this.getModel().getUrl())){
-           control=true;
-       }*/
-     
-       
-       
+            if (this.getModel().getUrlThumb() != null) {
+                System.out.println(this.getModel().getUrlThumb() + "View url");
+                this.setLabelIcon(this.getModel().getUrlThumb());
+                this.getTitulo().setText(this.getModel().getTitulo());
+                control = false;
+                this.setUrlAnterior(this.getModel().getUrl());
+            }else{
+                System.out.println("estou nulo");
+            }
+
+        }
+
+        this.getProgresso().setText(this.getModel().getOutput());
+        
+        if(this.getUrlAnterior() != null && this.getModel().getUrl()!=null ){
+            if (!this.getUrlAnterior().equals(this.getModel().getUrl())) {
+                control = true;
+            }
+        }
     }
-    public void setLabelIcon(String imgUrl){
+
+    public void setLabelIcon(String imgUrl) {
         Image image;
         URL url;
-        System.out.println("Estou aqui em set label:");
-        System.out.println("Olha o valor:"+imgUrl);
+        //   System.out.println("Estou aqui em set label:");
+        // System.out.println("Olha o valor:"+imgUrl);
         try {
-           
+
             /*URL url = new URL(urlLocation);
             URLConnection conn = url.openConnection();
             conn.setRequestProperty("User-Agent", "Mozilla/5.0");
@@ -293,20 +300,21 @@ public class ViewYoutubeDl extends javax.swing.JFrame implements Observer {
             conn.connect();
             InputStream urlStream = conn.getInputStream();
             image = ImageIO.read(urlStream);*/
-           url= new URL (imgUrl);
-           URLConnection conn = url.openConnection();
-           conn.setRequestProperty("User-Agent", "Mozilla/5.0");
-           conn.connect();
-           InputStream urlStream = conn.getInputStream();
+            url = new URL(imgUrl);
+            URLConnection conn = url.openConnection();
+            conn.setRequestProperty("User-Agent", "Mozilla/5.0");
+            conn.connect();
+            InputStream urlStream = conn.getInputStream();
             ImageIO.scanForPlugins();
-               image = ImageIO.read(url);
+            BufferedImage imagem = ImageIO.read(url);
+            image = imagem.getScaledInstance(252, 175, Image.SCALE_SMOOTH);
 
-            if (image!=null) {
+            if (image != null) {
                 this.getImg().setIcon(new ImageIcon(image));
-            }else{
+            } else {
                 System.out.println("Imagem está nula");
             }
-           
+
         } catch (MalformedURLException ex) {
             Logger.getLogger(ViewYoutubeDl.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
@@ -362,8 +370,5 @@ public class ViewYoutubeDl extends javax.swing.JFrame implements Observer {
     public void setUrlAnterior(String urlAnterior) {
         this.urlAnterior = urlAnterior;
     }
-    
-    
-    
-    
+
 }

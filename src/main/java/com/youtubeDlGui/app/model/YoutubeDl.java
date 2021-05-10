@@ -66,10 +66,10 @@ public class YoutubeDl implements Runnable{
             return formato;
     }
     public void obterThumb(){
-        System.out.println("hello estou aqui");
+        //System.out.println("hello estou aqui");
         ArrayList test = new ArrayList();
         try {
-            System.out.println("commando: youtube-dl --get-thumbnail "+this.getUrl());
+          //  System.out.println("commando: youtube-dl --get-thumbnail "+this.getUrl());
             this.youtubeDl=Runtime.getRuntime().exec("youtube-dl --get-thumbnail "+this.getUrl());
             BufferedReader in = new BufferedReader(new InputStreamReader(this.youtubeDl.getInputStream()));
             String line;
@@ -172,10 +172,8 @@ public class YoutubeDl implements Runnable{
 
     @Override
     public void run() {
-     //  this.obterThumb();
-   //    this.obterTitulo();
-     //  this.baixar();
-        
+       
+        this.baixar();
     }
     
     
